@@ -10,5 +10,5 @@
     "bin": [
 	"bin/brain-games"
     ],
-    "require": {},
+    "require": {}
 }
