@@ -1,0 +1,11 @@
+{
+    "name": "smood/brain-games",
+    "description": "For project",
+    "authors": [
+        {
+            "name": "Smood",
+            "email": "disruptenemyconnection@yahoo.com"
+        }
+    ],
+    "require": {}
+}
