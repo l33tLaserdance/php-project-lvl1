@@ -1,7 +1,7 @@
 {
     "name": "smood/brain-games",
     "bin": [
-	"bin/brain-games"
+	"/bin/brain-games"
     ],
     "type": "library",
     "description": "For project",
