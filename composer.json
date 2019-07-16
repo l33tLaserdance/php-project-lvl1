@@ -7,6 +7,15 @@
             "email": "disruptenemyconnection@yahoo.com"
         }
     ],
+    "autoload": {
+	"files": [
+		"src/cli.php"
+	],
+	"psr-4": {
+		"Php\\Package\\": "src",
+		"Php\\Package\\Tests\\": "tests"
+    	}
+    },
     "bin": [
 	"bin/brain-games"
     ],

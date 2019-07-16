@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Php\\Package\\Tests\\' => array($baseDir . '/tests'),
+    'Php\\Package\\' => array($baseDir . '/src'),
 );

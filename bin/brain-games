@@ -1,13 +1,12 @@
 #!/usr/bin/env php
+
 <?php
-	echo 'Welcome to the Brain Games!', PHP_EOL;
-	echo 'May I have your name? ';
-	$name = trim(fgets(STDIN));
-	if ($name == 'no') {
-		echo 'Fuck you', PHP_EOL;
-	}
-	if ($name == 'yes') {
-		echo 'Che yes, ya tebya imya prosil vvesti!!', PHP_EOL;
-	}
-	echo "Hello, {$name}!", PHP_EOL;
+	
+	require __DIR__ . '/../vendor/autoload.php';
+
+	use function \cli\line;
+	
+	line('Welcome to the Brain Game!');
+	$name = \cli\prompt('May I have your name?');
+	line("Hello, %s!", $name);
 ?>
