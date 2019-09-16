@@ -7,7 +7,9 @@
 <img src="https://api.codeclimate.com/v1/badges/5d7f931475f1ee8cd611/test_coverage" /></a>
 <br>
 To install run:<br>
+```js
 composer global require smood/brain-games:dev-master)<br>
+```
 
 To execute:<br>
 .composer/vendor/bin/brain-games<br>
@@ -16,17 +18,3 @@ To execute it from anywhere in system, modify your $PATH variable:<br>
 
 PATH=$PATH:~/.composer/vendor/bin/brain-games<br>
 
-```js
-  import { Component } from '@angular/core';
-  import { MovieService } from './services/movie.service';
-
-  @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    providers: [ MovieService ]
-  })
-  export class AppComponent {
-    title = 'app works!';
-  }
-```
