@@ -11,6 +11,9 @@
 
 	use function \cli\line;
 	
+	\cli\Colors::enable(); // Forcefully enable
+	\cli\line('  %C%5All output is run through %Y%6\cli\Colors::colorize%C%5 before display%n');
+	
 	line('Welcome to the Brain Game!');
 	$name = \cli\prompt('May I have your name?');
 	line("Hello, %s!", $name);

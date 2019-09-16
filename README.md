@@ -7,6 +7,8 @@
 <img src="https://api.codeclimate.com/v1/badges/5d7f931475f1ee8cd611/test_coverage" /></a>
 
 To install run:
-composer global -require --dev smood/brain-games "dev-master"
+composer global require smood/brain-games:dev-master
 To execute:
 .composer/vendor/bin/brain-games
+To execute it from anywhere in system, modify your $PATH variable:
+PATH=$PATH:~/.composer/vendor/bin/brain-games

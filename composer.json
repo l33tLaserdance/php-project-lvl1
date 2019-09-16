@@ -1,19 +1,24 @@
 {
     "name": "smood/brain-games",
     "bin": [
-	"/bin/brain-games"
+	"bin/brain-games"
     ],
     "type": "library",
-    "description": "For project",
     "authors": [
         {
             "name": "Smood",
             "email": "disruptenemyconnection@yahoo.com"
         }
     ],
-    "description": "Brain games project for hexlet",
+    "description": "For project",
     "license": "MIT",
     "minimum-stability": "dev",
+    "scripts": {
+	"phpcs": "phpcs",
+    	"phpcbf": "phpcbf",
+    	"phpunit": "phpunit",
+    	"test": "phpunit tests"
+    },
     "autoload": {
 	"files": [
 		"src/cli.php"
@@ -24,6 +29,7 @@
     	}
     },
     "require": {
-        "wp-cli/php-cli-tools": "^0.11.11"
+        "wp-cli/php-cli-tools": "^0.11.11",
+        "squizlabs/php_codesniffer": "^3.0@dev"
     }
 }
