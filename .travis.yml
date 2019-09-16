@@ -1,0 +1,5 @@
+language: php
+jobs:
+	include:
+		- stage: test
+		  script: phpcs -- --standard=PSR12 src bin
