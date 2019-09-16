@@ -1,13 +1,13 @@
 language: php
 php:
-	- '7.2'
+ - '7.2'
 
 install:
-	- composer self-update
-	-make install
+ - composer self-update
+ -make install
 
 script:
-	make lint test
+ make lint test
 
 after_script:
-	-vendor/bin/test-report
+ -vendor/bin/test-report
