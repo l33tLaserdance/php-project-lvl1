@@ -4,10 +4,9 @@ php:
 
 install:
  - composer self-update
- -make install
+ - make install
 
-script:
- make lint test
+script: make lint test
 
 after_script:
- -vendor/bin/test-report
+ - vendor/bin/test-report
