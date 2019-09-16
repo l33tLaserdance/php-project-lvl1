@@ -7,14 +7,13 @@
 <img src="https://api.codeclimate.com/v1/badges/5d7f931475f1ee8cd611/test_coverage" /></a>
 <br>
 To install run:<br>
-```diff
-- composer global require smood/brain-games:dev-master<br>
-```
+- ![#f03c15](- composer global require smood/brain-games:dev-master) `#f03c15`
+composer global require smood/brain-games:dev-master<br>
+
 To execute:<br>
-```diff
-- .composer/vendor/bin/brain-games<br>
-```
+.composer/vendor/bin/brain-games<br>
+
 To execute it from anywhere in system, modify your $PATH variable:<br>
-```diff
-- PATH=$PATH:~/.composer/vendor/bin/brain-games<br>
-```
+
+PATH=$PATH:~/.composer/vendor/bin/brain-games<br>
+
