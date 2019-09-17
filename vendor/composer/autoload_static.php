@@ -12,21 +12,24 @@ class ComposerStaticInit8aaf7b395e4af61942f9e67156b1e93d
     );
 
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Smood\\BrainGames\\' => 17,
+        ),
         'P' => 
         array (
             'Php\\Package\\Tests\\' => 18,
-            'Php\\Package\\' => 12,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Smood\\BrainGames\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Php\\Package\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
-        ),
-        'Php\\Package\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

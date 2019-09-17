@@ -2,11 +2,15 @@
 
 namespace Braingames\Cli;
 
-use function \cli\line;
+use function cli\line;
 
 function run()
 {
-    line('Welcome to the Brain Game!');
-    $name = \cli\prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    \cli\line(' %w%8Welcome to the Brain Game!%n');
+    $name = \cli\prompt(' %w%8May I have your name?%n');
+    if ($name == 'no' || $name == 'No' || $name == 'NO') {
+        \cli\line(' %r%8Then GTFO!!!%n');
+    } else {
+        \cli\line(" %w%2Hello, %s!%n", $name);
+    }
 }
