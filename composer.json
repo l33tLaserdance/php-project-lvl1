@@ -15,7 +15,7 @@
     "minimum-stability": "dev",
     "scripts": {
 	"phpcs": "phpcs",
-    	"phpcbf": "phpcbf",
+    	"phpcbf": "phpcbf"
     },
     "autoload": {
 	"psr-4": {
