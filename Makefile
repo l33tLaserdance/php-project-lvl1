@@ -1,7 +1,5 @@
 install:
 	composer install
-	composer require "squizlabs/php_codesniffer=*"
-	composer require "wp-cli/php-cli-tools=*"
 
 lint:
 	composer run-script phpcs -- --standard=PSR12 src bin

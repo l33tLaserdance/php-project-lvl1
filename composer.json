@@ -24,8 +24,7 @@
 		"src/cli.php"
 	],
 	"psr-4": {
-		"Smood\\BrainGames\\": "src",
-		"Php\\Package\\Tests\\": "tests"
+		"BrainGames\\Cli\\": "src"
     	}
     },
     "require": {
