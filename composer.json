@@ -24,7 +24,7 @@
 		"src/cli.php"
 	],
 	"psr-4": {
-		"Php\\Package\\": "src",
+		"Smood\\BrainGames\\": "src",
 		"Php\\Package\\Tests\\": "tests"
     	}
     },
