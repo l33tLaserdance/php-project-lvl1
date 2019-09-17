@@ -2,7 +2,7 @@
 
 namespace Braingames\Cli;
 
-use function \cli\line;
+use function cli\line;
 
 function run()
 {
