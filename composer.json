@@ -13,12 +13,6 @@
     "description": "For project",
     "license": "MIT",
     "minimum-stability": "dev",
-    "config": {
-	"preferred-install": {
-		"smood/brain-games": "source",
-		"*": "dist"
-	}
-    }
     "scripts": {
 	"phpcs": "phpcs",
     	"phpcbf": "phpcbf",
