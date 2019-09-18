@@ -54,8 +54,8 @@
     },
     {
         "name": "wp-cli/php-cli-tools",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v0.11.11",
+        "version_normalized": "0.11.11.0",
         "source": {
             "type": "git",
             "url": "https://github.com/wp-cli/php-cli-tools.git",
