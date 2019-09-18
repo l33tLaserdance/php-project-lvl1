@@ -6,12 +6,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-            "reference": "0bdbb89f4aed70840b1fe3f714270b28315e1593"
+            "reference": "9423bb7d6bf113c0ea7e0729b51357bf4d448d36"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/0bdbb89f4aed70840b1fe3f714270b28315e1593",
-            "reference": "0bdbb89f4aed70840b1fe3f714270b28315e1593",
+            "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/9423bb7d6bf113c0ea7e0729b51357bf4d448d36",
+            "reference": "9423bb7d6bf113c0ea7e0729b51357bf4d448d36",
             "shasum": ""
         },
         "require": {
@@ -23,7 +23,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
         },
-        "time": "2019-09-17T02:37:30+00:00",
+        "time": "2019-09-18T00:02:33+00:00",
         "bin": [
             "bin/phpcs",
             "bin/phpcbf"

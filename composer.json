@@ -18,12 +18,15 @@
     	"phpcbf": "phpcbf"
     },
     "autoload": {
+	"files": [
+		"src/cli.php"
+	],
 	"psr-4": {
 		"BrainGames\\Cli\\": "src"
     	}
     },
     "require": {
-        "wp-cli/php-cli-tools": "^0.11.11",
-        "squizlabs/php_codesniffer": "*"
+        "wp-cli/php-cli-tools": "dev-master",
+        "squizlabs/php_codesniffer": "dev-master"
     }
 }
