@@ -14,7 +14,7 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "scripts": {
-	"phpcs": "phpcs",
+	"phpcs": "php phpcs.phar",
     	"phpcbf": "phpcbf"
     },
     "autoload": {
