@@ -17,4 +17,4 @@ To make it run from anywhere on your system, add a new PATH entry:
 ```
 Then you can access to the games through typing "brain-games" command.
 The example of how it is done is represented below:
-<script id="asciicast-269621" src="https://asciinema.org/a/269621.js" async></script>
+[![asciicast](https://asciinema.org/a/269621.svg)](https://asciinema.org/a/269621)
