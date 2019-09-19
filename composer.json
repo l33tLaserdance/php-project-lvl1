@@ -1,7 +1,8 @@
 {
     "name": "smood/brain-games",
     "bin": [
-	"bin/brain-games"
+	"bin/brain-games",
+	"bin/brain-even"
     ],
     "type": "library",
     "authors": [
@@ -19,14 +20,15 @@
     },
     "autoload": {
 	"files": [
-		"src/cli.php"
+		"src/cli.php",
+		"src/even.php"
 	],
 	"psr-4": {
 		"BrainGames\\Cli\\": "src"
     	}
     },
     "require": {
-        "wp-cli/php-cli-tools": "dev-master",
+        "wp-cli/php-cli-tools": "*",
         "squizlabs/php_codesniffer": "*"
     }
 }

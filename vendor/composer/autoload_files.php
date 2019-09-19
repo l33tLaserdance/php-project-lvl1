@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'be01b9b16925dcb22165c40b46681ac6' => $vendorDir . '/wp-cli/php-cli-tools/lib/cli/cli.php',
     'bda688e60a435d5e3403fd57dcfe9dfa' => $baseDir . '/src/cli.php',
+    'b26e7b9fa550ec431bfa66b07b118bc9' => $baseDir . '/src/even.php',
 );
