@@ -17,21 +17,14 @@ function gameStart($name)
 {
     $i = 0;
     for ($i = 0; $i < 3; $i++) {
-        $number = rand(1, 30);
-        if ($number % 2 == 0) {
-            $answer = 'yes';
-            $wrong = 'no';
-        } else {
-            $answer = 'no';
-            $wrong = 'yes';
-        }
-        \cli\line(' %w%8Question: %s%n', $number);
+        $stats = getStats();
+        \cli\line(' %w%8Question: %s%n', $stats['number']);
         $result = \cli\prompt(" ");
         \cli\line(" %w%8Your answer: %s%n", $result);
-        if ($result != $answer) {
+        if ($result != $stats['right']) {
             \cli\line(
                 " %w%8'%r%8{:a}%w%8' is wrong answer ;(. Correct answer was '%g%8{:b}%w%8'%n",
-                array('a' => $result, 'b' => $wrong)
+                array('a' => $result, 'b' => $stats['right'])
             );
             return \cli\line(" %r%8Let's try again, %s!%n", $name);
         } else {
@@ -39,4 +32,21 @@ function gameStart($name)
         }
     }
     return \cli\line(" %g%8Congratulations, %s!%n", $name);
+}
+
+function getStats()
+{
+    $stats = [];
+    $number = rand(1, 30);
+    if ($number % 2 == 0) {
+        $answer = 'yes';
+        $wrong = 'no';
+    } else {
+        $answer = 'no';
+        $wrong = 'yes';
+    }
+    $stats['number'] = $number;
+    $stats['right'] = $answer;
+    $stats['wrong'] = $wrong;
+    return $stats;
 }
