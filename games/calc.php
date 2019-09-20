@@ -6,8 +6,8 @@ use function \cli\line;
 
 function calc()
 {
-    $message = 'What is the result of the expression?';
-    $name = hello($message);
+    $mes = 'What is the result of the expression?';
+    $name = hello($mes);
     $i = 0;
     for ($i = 0; $i < 3; $i++) {
         $game = randomCall();
