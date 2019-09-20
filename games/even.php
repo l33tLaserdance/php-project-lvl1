@@ -1,6 +1,6 @@
 <?php
 
-namespace Braingames\Cli;
+namespace Braingames\Games;
 
 use function \cli\line;
 

@@ -9,17 +9,23 @@ class ComposerStaticInit8aaf7b395e4af61942f9e67156b1e93d
     public static $files = array (
         'be01b9b16925dcb22165c40b46681ac6' => __DIR__ . '/..' . '/wp-cli/php-cli-tools/lib/cli/cli.php',
         'bda688e60a435d5e3403fd57dcfe9dfa' => __DIR__ . '/../..' . '/src/cli.php',
-        'b26e7b9fa550ec431bfa66b07b118bc9' => __DIR__ . '/../..' . '/src/even.php',
+        'f67a5c5e1fb33431c13d0f6205eb1242' => __DIR__ . '/../..' . '/games/even.php',
+        '37244e13db392203c833bef14a80ca36' => __DIR__ . '/../..' . '/games/calc.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'B' => 
         array (
+            'BrainGames\\Games\\' => 17,
             'BrainGames\\Cli\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'BrainGames\\Games\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/games',
+        ),
         'BrainGames\\Cli\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',

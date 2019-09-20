@@ -2,7 +2,8 @@
     "name": "smood/brain-games",
     "bin": [
 	"bin/brain-games",
-	"bin/brain-even"
+	"bin/brain-even",
+	"bin/brain-calc"
     ],
     "type": "library",
     "authors": [
@@ -21,10 +22,12 @@
     "autoload": {
 	"files": [
 		"src/cli.php",
-		"src/even.php"
+		"games/even.php",
+		"games/calc.php"
 	],
 	"psr-4": {
-		"BrainGames\\Cli\\": "src"
+		"BrainGames\\Cli\\": "src",
+		"BrainGames\\Games\\": "games"
     	}
     },
     "require": {
