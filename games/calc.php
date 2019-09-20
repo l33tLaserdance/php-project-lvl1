@@ -6,10 +6,8 @@ use function \cli\line;
 
 function calc()
 {
-    \cli\line(' %w%8Welcome to the Brain Games!%n');
-    \cli\line(' %w%8What is the result of the expression?%n');
-    $name = \cli\prompt(' %w%8May I have your name?%n');
-    \cli\line(' %g%8Hello, %s!%n', $name);
+    $message = 'What is the result of the expression?';
+    $name = hello($message);
     $i = 0;
     for ($i = 0; $i < 3; $i++) {
         $game = randomCall();

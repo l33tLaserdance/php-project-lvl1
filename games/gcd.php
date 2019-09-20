@@ -6,12 +6,11 @@ use function \cli\line;
 
 function gcd()
 {
-    \cli\line(' %w%8Welcome to the Brain Games!%n');
-    \cli\line(' %w%8Find the greatest common divisor of given numbers.%n');
-    $name = \cli\prompt(' %w%8May I have your name?%n');
-    \cli\line(' %g%8Hello, %s!%n', $name);                                                                                  $i = 0;
+    $message = 'Find the greatest common divisor of given numbers.';
+    $name = hello($message);
+    $i = 0;
     for ($i = 0; $i < 3; $i++) {
-        $game = startGame();
+        $game = startGcd();
         if ($game == 0) {
             return \cli\line(" %r%8Let's try again, %s!%n", $name);
         }
@@ -19,7 +18,7 @@ function gcd()
     return \cli\line(" %g%8Congratulations, %s!%n", $name);
 }
 
-function startGame()
+function startGcd()
 {
     $stats = getRandomStats();
     \cli\line(" %w%8Question: {:a} {:b}%n", array('a' => $stats['first'], 'b' => $stats['second']));
