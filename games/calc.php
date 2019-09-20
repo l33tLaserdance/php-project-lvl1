@@ -9,12 +9,13 @@ function calc()
     $mes = 'What is the result of the expression?';
     $name = hello($mes);
     $i = 0;
-    for ($i = 0; $i < 3; $i++) {
+    do {
         $game = randomCall();
+        $i++;
         if ($game == 0) {
             return \cli\line(" %r%8Let's try again, %s!%n", $name);
         }
-    }
+    } while ($i < 3);
     return \cli\line(" %g%8Congratulations, %s!%n", $name);
 }
 
