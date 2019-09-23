@@ -16,5 +16,27 @@ To make it run from anywhere on your system, add a new PATH entry:
 - PATH=$PATH:~/.composer/vendor/smood/brain-games/bin
 ```
 Then you can access to the games through typing "brain-games" command.
-The example of how it is done is represented below:
-[![asciicast](https://asciinema.org/a/3Bh7CUNIH0qYbfgAwnOtMSGFM.svg)](https://asciinema.org/a/3Bh7CUNIH0qYbfgAwnOtMSGFM)
+
+Installation:
+
+[![asciicast](https://asciinema.org/a/oCEksMB7OYXamKmofxuZKCxQb.svg)](https://asciinema.org/a/oCEksMB7OYXamKmofxuZKCxQb)
+
+Even:
+
+[![asciicast](https://asciinema.org/a/270495.svg)](https://asciinema.org/a/270495)
+
+Calc:
+
+[![asciicast](https://asciinema.org/a/270496.svg)](https://asciinema.org/a/270496)
+
+Gcd:
+
+[![asciicast](https://asciinema.org/a/270498.svg)](https://asciinema.org/a/270498)
+
+Progression:
+
+[![asciicast](https://asciinema.org/a/270500.svg)](https://asciinema.org/a/270500)
+
+Prime:
+
+[![asciicast](https://asciinema.org/a/270501.svg)](https://asciinema.org/a/270501)
