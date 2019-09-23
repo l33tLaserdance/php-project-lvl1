@@ -6,16 +6,9 @@ use function \cli\line;
 
 function gcd()
 {
-    $message = 'Find the greatest common divisor of given numbers.';
-    $name = hello($message);
-    $i = 0;
-    for ($i = 0; $i < 3; $i++) {
-        $game = startGcd();
-        if ($game == 0) {
-            return \cli\line(" %r%8Let's try again, %s!%n", $name);
-        }
-    }
-    return \cli\line(" %g%8Congratulations, %s!%n", $name);
+    $mes = 'Find the greatest common divisor of given numbers.';
+    $game = 'Braingames\Games\startGcd';
+    hello($mes, $game);
 }
 
 function startGcd()

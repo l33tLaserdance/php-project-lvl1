@@ -1,0 +1,40 @@
+<?php
+
+namespace Braingames\Games;
+
+use function \cli\line;
+
+function progression()
+{
+    $mes = 'What number is missing in the progressions given below?';
+    $game = 'Braingames\Games\startProgression';
+    hello($mes, $game);
+}
+
+function startProgression()
+{
+    $prog = multiplyAndDivide();
+    print_r($prog);
+}
+
+function generateProgression()
+{
+    
+}
+
+function multiply()
+{
+    $progression = [];
+    $progression[1] = rand(2, 10);
+    $mult = rand(2, 10);
+    $div = rand(2, 10);
+    $i = 2;
+    for ($i = 2; $i <= 10; $i++) {
+        if ($i % 2 == 0) {
+            $progression[$i] = $progression[$i-1] * $mult;
+        } else {
+            $progression[$i] = $progression[$i-1] / $div;
+        }
+    }
+    return $progression;
+}

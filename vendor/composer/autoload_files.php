@@ -12,4 +12,5 @@ return array(
     'f67a5c5e1fb33431c13d0f6205eb1242' => $baseDir . '/games/even.php',
     '37244e13db392203c833bef14a80ca36' => $baseDir . '/games/calc.php',
     '541f30aaf7223697e14941429c707813' => $baseDir . '/games/gcd.php',
+    '5ad325ed0eff336d3fd69b50482e2c1b' => $baseDir . '/games/progression.php',
 );
