@@ -6,32 +6,33 @@ use function \cli\line;
 
 function even()
 {
-    \cli\line(' %w%8Welcome to Brain Games!%n');
+    /*\cli\line(' %w%8Welcome to Brain Games!%n');
     \cli\line(' %w%8Answer "%g%8yes%w%8" if the number is even, otherwise answer "%r%8no%w%8"%n');
     $name = \cli\prompt(' %w%8May I have your name?%n');
     \cli\line(' %g%8Hello, %s!%n', $name);
-    gameStart($name);
+    gameStart($name);*/
+    $mes = "Answer 'yes' if the number is even, otherwise answer 'no'";
+    $game = 'Braingames\Games\startEven';
+    hello($mes, $game);
 }
 
-function gameStart($name)
+function startEven()
 {
     $i = 0;
-    for ($i = 0; $i < 3; $i++) {
-        $stats = getStats();
-        \cli\line(' %w%8Question: %s%n', $stats['number']);
-        $result = \cli\prompt(" ");
-        \cli\line(" %w%8Your answer: %s%n", $result);
-        if ($result != $stats['right']) {
-            \cli\line(
-                " %w%8'%r%8{:a}%w%8' is wrong answer ;(. Correct answer was '%g%8{:b}%w%8'%n",
-                array('a' => $result, 'b' => $stats['right'])
-            );
-            return \cli\line(" %r%8Let's try again, %s!%n", $name);
-        } else {
-            \cli\line(" %g%8Correct!%n");
-        }
+    $stats = getStats();
+    \cli\line(' %w%8Question: %s%n', $stats['number']);
+    $result = \cli\prompt(" ");
+    \cli\line(" %w%8Your answer: %s%n", $result);
+    if ($result != $stats['right']) {
+        \cli\line(
+            " %w%8'%r%8{:a}%w%8' is wrong answer ;(. Correct answer was '%g%8{:b}%w%8'%n",
+            array('a' => $result, 'b' => $stats['right'])
+        );
+        return 0;
+    } else {
+        \cli\line(" %g%8Correct!%n");
     }
-    return \cli\line(" %g%8Congratulations, %s!%n", $name);
+    return 1;
 }
 
 function getStats()

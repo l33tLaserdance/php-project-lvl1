@@ -40,14 +40,14 @@ function getRandomStats()
         $stats['high'] = $stats['second'];
         $stats['low'] = $stats['first'];
     }
-    $remain = $stats['high'] % $stats['low']; // 44
+    $remain = $stats['high'] % $stats['low'];
     if ($remain == 0) {
         $stats['result'] = $stats['low'];
         return $stats;
     }
-    $last = $stats['low']; //96
+    $last = $stats['low'];
     do {
-        $final = $last % $remain; // 96 % 44, 8
+        $final = $last % $remain;
         $last = $remain;
         $remain = $final;
     } while ($final > 0);

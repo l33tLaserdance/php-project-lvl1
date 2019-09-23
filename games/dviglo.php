@@ -18,5 +18,4 @@ function hello($message, $game)
         }
     }
     return \cli\line(" %g%8Congratulations, %s!%n", $name);
-    //return $name;
 }
