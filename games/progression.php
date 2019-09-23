@@ -34,7 +34,6 @@ function getStartAndAmount()
 function startProgression()
 {
     $progression = generateProgression();
-    print_r($progression);
     $conceal = rand(0, 9);
     $concealedElement = $progression[$conceal];
     $progression[$conceal] = '..';
@@ -64,7 +63,6 @@ function generateProgression()
     $invert = rand(0, 1);
     switch ($choice) {
         case 0:
-            echo '*';
             for ($i = 0; $i <= 9; $i++) {
                 $progression[$i] = ($stats['start'] + $i - 1) * $stats['amount'];
             }
@@ -73,7 +71,6 @@ function generateProgression()
             }
             return $progression;
         case 1:
-            echo '+';
             for ($i = 1; $i <= 9; $i++) {
                 $progression[$i] = ($progression[$i - 1]) + $stats['amount'];
             }
@@ -81,8 +78,5 @@ function generateProgression()
                 return invert($progression);
             }
             return $progression;
-        default:
-            echo "An error has occured.";
-            return 0;
     }
 }
