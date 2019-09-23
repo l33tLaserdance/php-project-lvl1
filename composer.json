@@ -5,7 +5,8 @@
 	"bin/brain-even",
 	"bin/brain-calc",
 	"bin/brain-gcd",
-        "bin/brain-progression"
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
     "type": "library",
     "authors": [
@@ -28,7 +29,8 @@
 		"games/even.php",
 		"games/calc.php",
 		"games/gcd.php",
-                "games/progression.php"
+                "games/progression.php",
+                "games/prime.php"
 	],
 	"psr-4": {
 		"BrainGames\\Cli\\": "src",

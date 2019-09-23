@@ -6,12 +6,7 @@ use function \cli\line;
 
 function even()
 {
-    /*\cli\line(' %w%8Welcome to Brain Games!%n');
-    \cli\line(' %w%8Answer "%g%8yes%w%8" if the number is even, otherwise answer "%r%8no%w%8"%n');
-    $name = \cli\prompt(' %w%8May I have your name?%n');
-    \cli\line(' %g%8Hello, %s!%n', $name);
-    gameStart($name);*/
-    $mes = "Answer 'yes' if the number is even, otherwise answer 'no'";
+    $mes = 'Answer "yes" if the number is even, otherwise answer "no"';
     $game = 'Braingames\Games\startEven';
     hello($mes, $game);
 }
