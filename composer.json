@@ -25,7 +25,7 @@
     "autoload": {
         "files": [
                 "src/cli.php",
-                "games/dviglo.php",
+                "dviglo/dviglo.php",
                 "games/even.php",
                 "games/calc.php",
                 "games/gcd.php",

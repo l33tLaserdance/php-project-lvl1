@@ -8,7 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'be01b9b16925dcb22165c40b46681ac6' => $vendorDir . '/wp-cli/php-cli-tools/lib/cli/cli.php',
     'bda688e60a435d5e3403fd57dcfe9dfa' => $baseDir . '/src/cli.php',
-    '577de6a89312b5a1dd16864f177b390c' => $baseDir . '/games/dviglo.php',
+    'deb7795489fdab7d12e525cca0b24a09' => $baseDir . '/dviglo/dviglo.php',
     'f67a5c5e1fb33431c13d0f6205eb1242' => $baseDir . '/games/even.php',
     '37244e13db392203c833bef14a80ca36' => $baseDir . '/games/calc.php',
     '541f30aaf7223697e14941429c707813' => $baseDir . '/games/gcd.php',
