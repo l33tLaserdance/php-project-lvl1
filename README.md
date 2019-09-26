@@ -1,6 +1,5 @@
 # php-project-lvl1
 [![Maintainability](https://api.codeclimate.com/v1/badges/5d7f931475f1ee8cd611/maintainability)](https://codeclimate.com/github/l33tLaserdance/php-project-lvl1/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/5d7f931475f1ee8cd611/test_coverage)](https://codeclimate.com/github/l33tLaserdance/php-project-lvl1/test_coverage)
 [![Build Status](https://travis-ci.org/l33tLaserdance/php-project-lvl1.svg?branch=master)](https://travis-ci.org/l33tLaserdance/php-project-lvl1)
 ##
 To install via composer:
