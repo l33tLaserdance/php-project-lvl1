@@ -16,7 +16,7 @@ function summary()
     $stats = getRandomNumbers();
     $result = $stats['first'] + $stats['second'];
     return [
-        'question' => $stats['first'].' + '.$stats['second'],
+        'question' => $stats['first'] . ' + ' . $stats['second'],
         'right' => $result
     ];
 }
@@ -26,7 +26,7 @@ function substract()
     $stats = getRandomNumbers();
     $result = $stats['first'] - $stats['second'];
     return [
-        'question' => $stats['first'].' - '.$stats['second'],
+        'question' => $stats['first'] . ' - ' . $stats['second'],
         'right' => $result
     ];
 }
@@ -36,7 +36,7 @@ function multiply()
     $stats = getRandomNumbers();
     $result = $stats['first'] * $stats['second'];
     return [
-        'question' => $stats['first'].' * '.$stats['second'],
+        'question' => $stats['first'] . ' * ' . $stats['second'],
         'right' => $result
     ];
 }

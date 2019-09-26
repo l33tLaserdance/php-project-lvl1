@@ -15,7 +15,7 @@ function startGcd()
 {
     $stats = getStatsForGcd();
     return [
-        'question' => $stats['first'].' '.$stats['second'],
+        'question' => $stats['first'] . ' ' . $stats['second'],
         'right' => $stats['result']
     ];
 }
