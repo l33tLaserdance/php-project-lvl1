@@ -17,25 +17,6 @@ class ComposerStaticInit8aaf7b395e4af61942f9e67156b1e93d
         'fa08ab92ca03c70dff1990cad52b9b7e' => __DIR__ . '/../..' . '/games/prime.php',
     );
 
-    public static $prefixLengthsPsr4 = array (
-        'B' => 
-        array (
-            'BrainGames\\Games\\' => 17,
-            'BrainGames\\Cli\\' => 15,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'BrainGames\\Games\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/games',
-        ),
-        'BrainGames\\Cli\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
-    );
-
     public static $prefixesPsr0 = array (
         'c' => 
         array (
@@ -49,8 +30,6 @@ class ComposerStaticInit8aaf7b395e4af61942f9e67156b1e93d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8aaf7b395e4af61942f9e67156b1e93d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8aaf7b395e4af61942f9e67156b1e93d::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit8aaf7b395e4af61942f9e67156b1e93d::$prefixesPsr0;
 
         }, null, ClassLoader::class);

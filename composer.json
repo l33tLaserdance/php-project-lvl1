@@ -1,14 +1,15 @@
 {
     "name": "smood/brain-games",
+    "version": "1.0.1",
     "bin": [
-	"bin/brain-games",
-	"bin/brain-even",
-	"bin/brain-calc",
-	"bin/brain-gcd",
+        "bin/brain-games",
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-gcd",
         "bin/brain-progression",
         "bin/brain-prime"
     ],
-    "type": "library",
+    "type": "project",
     "authors": [
         {
             "name": "Smood",
@@ -17,25 +18,20 @@
     ],
     "description": "For project",
     "license": "MIT",
-    "minimum-stability": "dev",
     "scripts": {
-	"phpcs": "php phpcs.phar",
-    	"phpcbf": "phpcbf"
+        "phpcs": "php phpcs.phar",
+        "phpcbf": "phpcbf"
     },
     "autoload": {
-	"files": [
-		"src/cli.php",
-		"games/dviglo.php",
-		"games/even.php",
-		"games/calc.php",
-		"games/gcd.php",
+        "files": [
+                "src/cli.php",
+                "games/dviglo.php",
+                "games/even.php",
+                "games/calc.php",
+                "games/gcd.php",
                 "games/progression.php",
                 "games/prime.php"
-	],
-	"psr-4": {
-		"BrainGames\\Cli\\": "src",
-		"BrainGames\\Games\\": "games"
-    	}
+        ]
     },
     "require": {
         "wp-cli/php-cli-tools": "*",

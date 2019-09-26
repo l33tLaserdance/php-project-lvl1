@@ -15,36 +15,30 @@ function summary()
 {
     $stats = getRandomNumbers();
     $result = $stats['first'] + $stats['second'];
-    \cli\line(" %w%8Question: {:a} + {:b}%n", array('a' => $stats['first'], 'b' => $stats['second']));
-    $answer = \cli\prompt(" ");
-    $final  = [];
-    $final['answer'] = $answer;
-    $final['result'] = $result;
-    return getResult($final);
+    return [
+        'question' => $stats['first'].' + '.$stats['second'],
+        'right' => $result
+    ];
 }
 
 function substract()
 {
     $stats = getRandomNumbers();
     $result = $stats['first'] - $stats['second'];
-    \cli\line(" %w%8Question: {:a} - {:b}%n", array('a' => $stats['first'], 'b' => $stats['second']));
-    $answer = \cli\prompt(" ");
-    $final  = [];
-    $final['answer'] = $answer;
-    $final['result'] = $result;
-    return getResult($final);
+    return [
+        'question' => $stats['first'].' - '.$stats['second'],
+        'right' => $result
+    ];
 }
 
 function multiply()
 {
     $stats = getRandomNumbers();
     $result = $stats['first'] * $stats['second'];
-    \cli\line(" %w%8Question: {:a} * {:b}%n", array('a' => $stats['first'], 'b' => $stats['second']));
-    $answer = \cli\prompt(" ");
-    $final  = [];
-    $final['answer'] = $answer;
-    $final['result'] = $result;
-    return getResult($final);
+    return [
+        'question' => $stats['first'].' * '.$stats['second'],
+        'right' => $result
+    ];
 }
 
 function randomCall()
@@ -73,18 +67,4 @@ function getRandomNumbers()
     $stats['first'] = rand(1, 30);
     $stats['second'] = rand(1, 30);
     return $stats;
-}
-
-function getResult(array $final)
-{
-    if ($final['answer'] == $final['result']) {
-        \cli\line(" %g%8Correct!%n");
-        return 1;
-    } else {
-        \cli\line(
-            " %w%8'%r%8{:c}%w%8' is wrong answer ;(. Correct answer was '%g%8{:d}%w%8'%n",
-            array('c' => $final['answer'], 'd' => $final['result'])
-        );
-        return 0;
-    }
 }

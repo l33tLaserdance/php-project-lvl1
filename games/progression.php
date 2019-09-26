@@ -38,19 +38,10 @@ function startProgression()
     $concealedElement = $progression[$conceal];
     $progression[$conceal] = '..';
     $forecho = implode(' ', $progression);
-    \cli\line(" %w%8Question: %s %n", $forecho);
-    $result = \cli\prompt(" ");
-    \cli\line(" %w%8Your answer: %s%n", $result);
-    if ($result == $concealedElement) {
-        \cli\line(" %g%8Correct!%n");
-        return 1;
-    } else {
-        \cli\line(
-            " %w%8'%r%8{:a}%w%8' is wrong answer ;(. Correct answer was '%g%8{:b}%w%8'%n",
-            array('a' => $result, 'b' => $concealedElement)
-        );
-        return 0;
-    }
+    return [
+        'question' => $forecho,
+        'right' => $concealedElement
+    ];
 }
 
 function generateProgression()

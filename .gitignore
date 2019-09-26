@@ -1,2 +1,6 @@
 /vendor/
 logs
+.calc.php.swp
+progression.php.save
+cli.php.save
+composer.phar
