@@ -2,13 +2,11 @@
 
 namespace Braingames\Games;
 
-use function \cli\line;
-
 function progression()
 {
-    $mes = 'What number is missing in the progressions given below?';
+    $message = 'What number is missing in the progressions given below?';
     $game = 'Braingames\Games\startProgression';
-    hello($mes, $game);
+    hello($message, $game);
 }
 
 function invert(array $progression)
@@ -50,8 +48,8 @@ function generateProgression()
     $progression = [];
     $progression[0] = $stats['start'];
     $i = 0;
-    $choice = rand(0, 1);
-    $invert = rand(0, 1);
+    $choice = rand(0, 1); // случайный выбор прогрессии с умножением или со сложением
+    $invert = rand(0, 1); // случайный выбор, вывести в обратном порядке или нет
     switch ($choice) {
         case 0:
             for ($i = 0; $i <= 9; $i++) {

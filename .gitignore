@@ -1,5 +1,6 @@
-/vendor/
+vendor/
 logs
 .calc.php.swp
 *.save
 composer.phar
+phpcs.phar

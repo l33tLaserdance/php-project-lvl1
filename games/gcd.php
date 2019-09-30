@@ -2,13 +2,11 @@
 
 namespace Braingames\Games;
 
-use function \cli\line;
-
 function gcd()
 {
-    $mes = 'Find the greatest common divisor of given numbers.';
+    $message = 'Find the greatest common divisor of given numbers.';
     $game = 'Braingames\Games\startGcd';
-    hello($mes, $game);
+    hello($mesage, $game);
 }
 
 function startGcd()

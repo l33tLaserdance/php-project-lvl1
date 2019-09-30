@@ -2,13 +2,11 @@
 
 namespace Braingames\Games;
 
-use function \cli\line;
-
 function prime()
 {
-    $mes = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+    $message = 'Answer "yes" if given number is prime. Otherwise answer "no"';
     $game = 'Braingames\Games\startPrime';
-    hello($mes, $game);
+    hello($message, $game);
 }
 
 function startPrime()
@@ -16,11 +14,11 @@ function startPrime()
     $num = rand(0, 3571);
     return [
         'question' => $num,
-        'right' => primeCheck($num)
+        'right' => checkPrime($num)
     ];
 }
 
-function primeCheck(int $number)
+function checkPrime(int $number)
 {
     if ($number < 2) {
         return 'no';

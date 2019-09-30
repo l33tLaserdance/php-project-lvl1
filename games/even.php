@@ -2,13 +2,11 @@
 
 namespace Braingames\Games;
 
-use function \cli\line;
-
 function even()
 {
-    $mes = 'Answer "yes" if the number is even, otherwise answer "no"';
+    $message = 'Answer "yes" if the number is even, otherwise answer "no"';
     $game = 'Braingames\Games\startEven';
-    hello($mes, $game);
+    hello($message, $game);
 }
 
 function startEven()

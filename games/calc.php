@@ -2,13 +2,11 @@
 
 namespace Braingames\Games;
 
-use function \cli\line;
-
 function calc()
 {
-    $mes = 'What is the result of the expression?';
+    $message = 'What is the result of the expression?';
     $game = 'Braingames\Games\randomCall';
-    hello($mes, $game);
+    hello($message, $game);
 }
 
 function summary()

@@ -24,13 +24,13 @@
     },
     "autoload": {
         "files": [
-                "src/cli.php",
-                "dviglo/dviglo.php",
-                "games/even.php",
-                "games/calc.php",
-                "games/gcd.php",
-                "games/progression.php",
-                "games/prime.php"
+            "src/cli.php",
+            "dviglo/dviglo.php",
+            "games/even.php",
+            "games/calc.php",
+            "games/gcd.php",
+            "games/progression.php",
+            "games/prime.php"
         ]
     },
     "require": {
