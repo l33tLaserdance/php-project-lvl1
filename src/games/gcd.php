@@ -2,7 +2,6 @@
 
 namespace Braingames\Games;
 
-
 function gcd()
 {
     $message = 'Find the greatest common divisor of given numbers.';
@@ -44,4 +43,5 @@ function getEuclidStatsForGcd()
     } while ($final > 0);                           // Цикл повторяется до тех пор, пока финальный остаток не станет 0
     $stats['result'] = $last;                       // После остановки цикла последнее значение последнего делителя
     return $stats;                                  //как раз будет наибольшим делителем. Запись этого значения в
-}                                                   //результат и возврат массива "статы".
+                                                    //результат и возврат массива "статы".
+}

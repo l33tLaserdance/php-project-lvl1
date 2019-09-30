@@ -2,8 +2,8 @@
 
 namespace Braingames\Games;
 
-use function \cli\line as writeLine;
-use function \cli\prompt as requestInput;
+use function cli\line as writeLine;
+use function cli\prompt as requestInput;
 
 function hello($message, $game)
 {
