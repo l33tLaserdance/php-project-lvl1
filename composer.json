@@ -1,8 +1,7 @@
 {
     "name": "smood/brain-games",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "bin": [
-        "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
@@ -24,13 +23,12 @@
     },
     "autoload": {
         "files": [
-            "src/cli.php",
-            "dviglo/dviglo.php",
-            "games/even.php",
-            "games/calc.php",
-            "games/gcd.php",
-            "games/progression.php",
-            "games/prime.php"
+            "src/hello.php",
+            "src/games/even.php",
+            "src/games/calc.php",
+            "src/games/gcd.php",
+            "src/games/progression.php",
+            "src/games/prime.php"
         ]
     },
     "require": {

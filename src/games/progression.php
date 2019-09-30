@@ -5,7 +5,7 @@ namespace Braingames\Games;
 function progression()
 {
     $message = 'What number is missing in the progressions given below?';
-    $game = 'Braingames\Games\startProgression';
+    $game = 'Braingames\Games\startProgressionGame';
     hello($message, $game);
 }
 
@@ -29,20 +29,21 @@ function getStartAndAmount()
     return $progression;
 }
 
-function startProgression()
+function startProgressionGame()
 {
-    $progression = generateProgression();
+    $statsForGenerator = getStatsForProgression();
+    $progression = generateProgression($statsForGenerator);
     $conceal = rand(0, 9);
     $concealedElement = $progression[$conceal];
     $progression[$conceal] = '..';
-    $forecho = implode(' ', $progression);
+    $question = implode(' ', $progression);
     return [
-        'question' => $forecho,
+        'question' => $question,
         'right' => $concealedElement
     ];
 }
 
-function generateProgression()
+function getStatsForProgression()
 {
     $stats = getStartAndAmount();
     $progression = [];
@@ -50,22 +51,32 @@ function generateProgression()
     $i = 0;
     $choice = rand(0, 1); // случайный выбор прогрессии с умножением или со сложением
     $invert = rand(0, 1); // случайный выбор, вывести в обратном порядке или нет
-    switch ($choice) {
+    return [
+        'stats' => $stats,
+        'progression' => $progression,
+        'choice' => $choice,
+        'invert' => $invert
+    ];
+}
+
+function generateProgression(array $stats)
+{
+    switch ($stats['choice']) {
         case 0:
             for ($i = 0; $i <= 9; $i++) {
-                $progression[$i] = ($stats['start'] + $i - 1) * $stats['amount'];
+                $stats['progression'][$i] = ($stats['stats']['start'] + $i - 1) * $stats['stats']['amount'];
             }
-            if ($invert == 1) {
-                return invert($progression);
+            if ($stats['invert'] == 1) {
+                return invert($stats['progression']);
             }
-            return $progression;
+            return $stats['progression'];
         case 1:
             for ($i = 1; $i <= 9; $i++) {
-                $progression[$i] = ($progression[$i - 1]) + $stats['amount'];
+                $stats['progression'][$i] = ($stats['progression'][$i - 1]) + $stats['stats']['amount'];
             }
-            if ($invert == 1) {
-                return invert($progression);
+            if ($stats['invert'] == 1) {
+                return invert($stats['progression']);
             }
-            return $progression;
+            return $stats['progression'];
     }
 }

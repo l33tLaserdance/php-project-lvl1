@@ -2,7 +2,7 @@ install:
 	composer install
 
 lint:
-	composer run-script phpcs -- --standard=PSR12 src bin games
+	composer run-script phpcs -- --standard=PSR12 src bin
 
 path:
 	echo PATH=$PATH:~/.composer/vendor/smood/brain-games/bin

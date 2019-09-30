@@ -12,7 +12,8 @@ function hello($message, $game)
     $name = requestInput(' %w%8May I have your name?%n');
     writeLine(' %g%8Hello, %s!%n', $name);
     $i = 0;
-    for ($i = 0; $i < 3; $i++) {
+    $turns = 3;
+    for ($i = 0; $i < $turns; $i++) {
         $result = $game();
         writeLine(' %w%8Question: %s%n', $result['question']);
         $answer = requestInput(" ");

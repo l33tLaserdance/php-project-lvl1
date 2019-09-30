@@ -5,20 +5,20 @@ namespace Braingames\Games;
 function prime()
 {
     $message = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-    $game = 'Braingames\Games\startPrime';
+    $game = 'Braingames\Games\startPrimeGame';
     hello($message, $game);
 }
 
-function startPrime()
+function startPrimeGame()
 {
     $num = rand(0, 3571);
     return [
         'question' => $num,
-        'right' => checkPrime($num)
+        'right' => getRightAnswer($num)
     ];
 }
 
-function checkPrime(int $number)
+function getRightAnswer(int $number)
 {
     if ($number < 2) {
         return 'no';
