@@ -2,12 +2,12 @@
 
 namespace Braingames\Games;
 
-define("gcdmessage", 'Find the greatest common divisor of given numbers.');
-define("gcdgame", 'Braingames\Games\getGcdData');
+define("GCDMESSAGE", 'Find the greatest common divisor of given numbers.');
+define("GCDGAME", 'Braingames\Games\getGcdData');
 
 function gcd()
 {
-    hello(gcdmessage, gcdgame);
+    hello(GCDMESSAGE, GCDGAME);
 }
 
 function getGcdData()

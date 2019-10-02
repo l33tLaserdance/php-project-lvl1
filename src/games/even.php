@@ -2,12 +2,12 @@
 
 namespace Braingames\Games;
 
-define("evenmessage", 'Answer "yes" if the number is even, otherwise answer "no"');
-define("evengame", 'Braingames\Games\getEvenData');
+define("EVENMESSAGE", 'Answer "yes" if the number is even, otherwise answer "no"');
+define("EVENGAME", 'Braingames\Games\getEvenData');
 
 function even()
 {
-    hello(evenmessage, evengame);
+    hello(EVENMESSAGE, EVENGAME);
 }
 
 function getEvenData()

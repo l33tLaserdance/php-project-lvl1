@@ -2,12 +2,12 @@
 
 namespace Braingames\Games;
 
-define("progmessage", 'What number is missing in the progressions given below?');
-define("proggame", 'Braingames\Games\getProgressionData');
+define("PROGMESSAGE", 'What number is missing in the progressions given below?');
+define("PROGGAME", 'Braingames\Games\getProgressionData');
 
 function progression()
 {
-    hello(progmessage, proggame);
+    hello(PROGMESSAGE, PROGGAME);
 }
 
 function invert(array $progression)

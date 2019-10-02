@@ -2,12 +2,12 @@
 
 namespace Braingames\Games;
 
-define("calcmessage", 'What is the result of the expression?');
-define("calcgame", 'Braingames\Games\randomAction');
+define("CALCMESSAGE", 'What is the result of the expression?');
+define("CALCGAME", 'Braingames\Games\randomAction');
 
 function calc()
 {
-    hello(calcmessage, calcgame);
+    hello(CALCMESSAGE, CALCGAME);
 }
 
 function randomAction()

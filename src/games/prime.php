@@ -2,12 +2,12 @@
 
 namespace Braingames\Games;
 
-define("primemessage", 'Answer "yes" if given number is prime. Otherwise answer "no"');
-define("primegame", 'Braingames\Games\getPrimeData');
+define("PRIMEMESSAGE", 'Answer "yes" if given number is prime. Otherwise answer "no"');
+define("PRIMEGAME", 'Braingames\Games\getPrimeData');
 
 function prime()
 {
-    hello(primemessage, primegame);
+    hello(PRIMEMESSAGE, PRIMEGAME);
 }
 
 function getPrimeData()
