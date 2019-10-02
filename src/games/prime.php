@@ -13,14 +13,9 @@ function prime()
 function getPrimeData()
 {
     $question = rand(0, 3571);
-    if (isPrime($question)) {
-        $answer = 'yes';
-    } else {
-        $answer = 'no';
-    }
     return [
         'question' => $question,
-        'right' => $answer
+        'right' => (isPrime($question)) ? 'yes' : 'no'
     ];
 }
 

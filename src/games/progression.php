@@ -24,8 +24,11 @@ function invert(array $progression)
 
 function getProgressionData()
 {
-    $dataForGenerator = getDataForProgression();
-    $progression = generateProgression($dataForGenerator);
+    $initial = getInitial();
+    $step = getStep();
+    $length = setLength();
+    $inversion = setInvertedOrNot();
+    $progression = generateProgression($initial, $step, $length, $inversion);
     $conceal = rand(1, 10);
     $concealedElement = $progression[$conceal];
     $progression[$conceal] = '..';
@@ -36,27 +39,30 @@ function getProgressionData()
     ];
 }
 
-function getDataForProgression()
+function getInitial()
 {
-    $initial = rand(1, 10);
-    $step = rand(2, 10);
-    $length = 10;
-    $invert = rand(0, 1); // случайный выбор, вывести в обратном порядке или нет
-    return [
-        'initial' => $initial,
-        'step' => $step,
-        'length' => $length,
-        'invert' => $invert
-    ];
+    return rand(1, 10);
 }
 
-function generateProgression(array $data)
+function getStep()
 {
-    for ($i = 1; $i <= $data['length']; $i++) {
-        $progression[$i] = $data['initial'] + ($data['step'] * $i);
+    return rand(2, 10);
+}
+
+function setLength()
+{
+    return 10;
+}
+
+function setInvertedOrNot()
+{
+    return rand(0, 1);
+}
+
+function generateProgression($initial, $step, $length, $inversion)
+{
+    for ($i = 1; $i <= $length; $i++) {
+        $progression[$i] = $initial + ($step * $i);
     }
-    if ($data['invert'] == 1) {
-        return invert($progression);
-    }
-    return $progression;
+    return ($inversion == 1) ? invert($progression) : $progression;
 }
