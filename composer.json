@@ -1,6 +1,6 @@
 {
     "name": "smood/brain-games",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "bin": [
         "bin/brain-even",
         "bin/brain-calc",

@@ -2,56 +2,33 @@
 
 namespace Braingames\Games;
 
+define("calcmessage", 'What is the result of the expression?');
+define("calcgame", 'Braingames\Games\randomAction');
+
 function calc()
 {
-    $message = 'What is the result of the expression?';
-    $game = 'Braingames\Games\randomCall';
-    hello($message, $game);
+    hello(calcmessage, calcgame);
 }
 
-function summary()
+function randomAction()
 {
-    $stats = getRandomNumbers();
-    $result = $stats['first'] + $stats['second'];
-    return [
-        'question' => $stats['first'] . ' + ' . $stats['second'],
-        'right' => $result
-    ];
-}
-
-function substract()
-{
-    $stats = getRandomNumbers();
-    $result = $stats['first'] - $stats['second'];
-    return [
-        'question' => $stats['first'] . ' - ' . $stats['second'],
-        'right' => $result
-    ];
-}
-
-function multiply()
-{
-    $stats = getRandomNumbers();
-    $result = $stats['first'] * $stats['second'];
-    return [
-        'question' => $stats['first'] . ' * ' . $stats['second'],
-        'right' => $result
-    ];
-}
-
-function randomCall()
-{
-    $callfunc = rand(0, 2);
-    switch ($callfunc) {
+    $data = getRandomNumbers();
+    switch (rand(0, 2)) {
         case 0:
-            return summary();
-            break;
+            return [
+                'question' => $data['first'] . ' * ' . $data['second'],
+                'right' => $data['first'] * $data['second']
+            ];
         case 1:
-            return substract();
-            break;
+            return [
+                'question' => $data['first'] . ' - ' . $data['second'],
+                'right' => $data['first'] - $data['second']
+            ];
         case 2:
-            return multiply();
-            break;
+            return [
+                'question' => $data['first'] . ' + ' . $data['second'],
+                'right' => $data['first'] + $data['second']
+            ];
         default:
             echo "An error has occured.";
             return 0;
@@ -61,8 +38,8 @@ function randomCall()
 
 function getRandomNumbers()
 {
-    $stats = [];
-    $stats['first'] = rand(1, 30);
-    $stats['second'] = rand(1, 30);
-    return $stats;
+    $data = [];
+    $data['first'] = rand(1, 30);
+    $data['second'] = rand(1, 30);
+    return $data;
 }

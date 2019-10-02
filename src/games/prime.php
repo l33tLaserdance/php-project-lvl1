@@ -2,32 +2,38 @@
 
 namespace Braingames\Games;
 
+define("primemessage", 'Answer "yes" if given number is prime. Otherwise answer "no"');
+define("primegame", 'Braingames\Games\getPrimeData');
+
 function prime()
 {
-    $message = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-    $game = 'Braingames\Games\startPrimeGame';
-    hello($message, $game);
+    hello(primemessage, primegame);
 }
 
-function startPrimeGame()
+function getPrimeData()
 {
-    $num = rand(0, 3571);
+    $question = rand(0, 3571);
+    if (isPrime($question)) {
+        $answer = 'yes';
+    } else {
+        $answer = 'no';
+    }
     return [
-        'question' => $num,
-        'right' => getRightAnswer($num)
+        'question' => $question,
+        'right' => $answer
     ];
 }
 
-function getRightAnswer(int $number)
+function isPrime(int $number)
 {
     if ($number < 2) {
-        return 'no';
+        return 0;
     }
     $i = 2;
     for ($i = 2; $i <= $number / 2; $i++) {
         if ($number % $i == 0) {
-            return 'no';
+            return 0;
         }
     }
-    return 'yes';
+    return 1;
 }

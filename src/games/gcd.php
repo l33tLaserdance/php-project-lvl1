@@ -2,46 +2,47 @@
 
 namespace Braingames\Games;
 
+define("gcdmessage", 'Find the greatest common divisor of given numbers.');
+define("gcdgame", 'Braingames\Games\getGcdData');
+
 function gcd()
 {
-    $message = 'Find the greatest common divisor of given numbers.';
-    $game = 'Braingames\Games\startGcdGame';
-    hello($message, $game);
+    hello(gcdmessage, gcdgame);
 }
 
-function startGcdGame()
+function getGcdData()
 {
-    $stats = getEuclidStatsForGcd();
+    $data = getEuclidDataForGcd();
     return [
-        'question' => $stats['first'] . ' ' . $stats['second'],
-        'right' => $stats['result']
+        'question' => $data['first'] . ' ' . $data['second'],
+        'right' => $data['result']
     ];
 }
 
-function getEuclidStatsForGcd()
+function getEuclidDataForGcd()
 {
-    $stats = [];                                    // Инициализация "статов"
-    $stats['first'] = rand(1, 100);                 // Получение первого стата
-    $stats['second'] = rand(1, 100);                // Получение второго стата
-    if ($stats['first'] > $stats['second']) {       // Если первый больше второго
-        $stats['high'] = $stats['first'];           // "Высоким" становится первый
-        $stats['low'] = $stats['second'];           // "Низким" становится второй
-    } else {                                        // Иначе
-        $stats['high'] = $stats['second'];          // "Высоким" становится второй
-        $stats['low'] = $stats['first'];            // "Низким" становится первый
-    }                                               // (даже если они будут равны)
-    $remain = $stats['high'] % $stats['low'];       // Получение остатка от деления "высокого" на "низкий"
-    if ($remain == 0) {                             // Если остаток равен нулю ("статы" были равны)
-        $stats['result'] = $stats['low'];           // Записываем в результат делитель ("низкий")
-        return $stats;                              // Возвращаем массив "статы"
-    }                                               // Раз возврата не произошло, значит остаток не 0
-    $last = $stats['low'];                          // Запись последнего делителя - "низкого"
-    do {                                            // Старт цикла
-        $final = $last % $remain;                   // Финальный остаток. Финальным он может стать на любой итерации
-        $last = $remain;                            //цикла. Последним делителем становится остаток.
-        $remain = $final;                           // Остатком становится текущий финальный остаток.
-    } while ($final > 0);                           // Цикл повторяется до тех пор, пока финальный остаток не станет 0
-    $stats['result'] = $last;                       // После остановки цикла последнее значение последнего делителя
-    return $stats;                                  //как раз будет наибольшим делителем. Запись этого значения в
-                                                    //результат и возврат массива "статы".
+    $data = [];                                    // Инициализация данных
+    $data['first'] = rand(1, 100);                 // Получение первого числа
+    $data['second'] = rand(1, 100);                // Получение второго числа
+    if ($data['first'] > $data['second']) {        // Если первое больше второго
+        $data['high'] = $data['first'];            // Большим становится первое
+        $data['low'] = $data['second'];            // Меньшим становится второе
+    } else {                                       // Иначе
+        $data['high'] = $data['second'];           // Большим становится второе
+        $data['low'] = $data['first'];             // Меньшим становится первое
+    }                                              // (даже если они будут равны)
+    $remain = $data['high'] % $data['low'];        // Получение остатка от деления большего на меньшее
+    if ($remain == 0) {                            // Если остаток равен нулю (числа были равны)
+        $data['result'] = $data['low'];            // В результат записывается делитель (меньшее число)
+        return $data;                              // Возвращается массив с данными
+    }                                              // Раз возврата не произошло, значит остаток не 0
+    $last = $data['low'];                          // Запись последнего делителя - меньшего числа
+    do {                                           // Старт цикла
+        $final = $last % $remain;                  // Финальный остаток. Финальным он может стать на любой итерации
+        $last = $remain;                           //цикла. Последним делителем становится остаток.
+        $remain = $final;                          // Остатком становится текущий полученный остаток.
+    } while ($final > 0);                          // Цикл повторяется до тех пор, пока полученный остаток не станет 0
+    $data['result'] = $last;                       // После остановки цикла последнее значение последнего делителя
+    return $data;                                  //как раз будет наибольшим делителем. Запись этого значения в
+                                                   //результат и возврат массива с данными.
 }

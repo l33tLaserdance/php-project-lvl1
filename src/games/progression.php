@@ -2,38 +2,31 @@
 
 namespace Braingames\Games;
 
+define("progmessage", 'What number is missing in the progressions given below?');
+define("proggame", 'Braingames\Games\getProgressionData');
+
 function progression()
 {
-    $message = 'What number is missing in the progressions given below?';
-    $game = 'Braingames\Games\startProgressionGame';
-    hello($message, $game);
+    hello(progmessage, proggame);
 }
 
 function invert(array $progression)
 {
-    $i = 0;
-    $size = count($progression) - 1;
-    for ($i = 0; $i < $size / 2; $i++) {
+    $i = 1;
+    $size = count($progression);
+    for ($i = 1; $i < $size / 2 + 1; $i++) {
         $val = $progression[$i];
-        $progression[$i] = $progression[$size - $i];
-        $progression[$size - $i] = $val;
+        $progression[$i] = $progression[$size - $i + 1];
+        $progression[$size - $i + 1] = $val;
     }
     return $progression;
 }
 
-function getStartAndAmount()
+function getProgressionData()
 {
-    $progression = [];
-    $progression['start'] = rand(2, 10);
-    $progression['amount'] = rand(2, 10);
-    return $progression;
-}
-
-function startProgressionGame()
-{
-    $statsForGenerator = getStatsForProgression();
-    $progression = generateProgression($statsForGenerator);
-    $conceal = rand(0, 9);
+    $dataForGenerator = getDataForProgression();
+    $progression = generateProgression($dataForGenerator);
+    $conceal = rand(1, 10);
     $concealedElement = $progression[$conceal];
     $progression[$conceal] = '..';
     $question = implode(' ', $progression);
@@ -43,40 +36,27 @@ function startProgressionGame()
     ];
 }
 
-function getStatsForProgression()
+function getDataForProgression()
 {
-    $stats = getStartAndAmount();
-    $progression = [];
-    $progression[0] = $stats['start'];
-    $i = 0;
-    $choice = rand(0, 1); // случайный выбор прогрессии с умножением или со сложением
+    $initial = rand(1, 10);
+    $step = rand(2, 10);
+    $length = 10;
     $invert = rand(0, 1); // случайный выбор, вывести в обратном порядке или нет
     return [
-        'stats' => $stats,
-        'progression' => $progression,
-        'choice' => $choice,
+        'initial' => $initial,
+        'step' => $step,
+        'length' => $length,
         'invert' => $invert
     ];
 }
 
-function generateProgression(array $stats)
+function generateProgression(array $data)
 {
-    switch ($stats['choice']) {
-        case 0:
-            for ($i = 0; $i <= 9; $i++) {
-                $stats['progression'][$i] = ($stats['stats']['start'] + $i - 1) * $stats['stats']['amount'];
-            }
-            if ($stats['invert'] == 1) {
-                return invert($stats['progression']);
-            }
-            return $stats['progression'];
-        case 1:
-            for ($i = 1; $i <= 9; $i++) {
-                $stats['progression'][$i] = ($stats['progression'][$i - 1]) + $stats['stats']['amount'];
-            }
-            if ($stats['invert'] == 1) {
-                return invert($stats['progression']);
-            }
-            return $stats['progression'];
+    for ($i = 1; $i <= $data['length']; $i++) {
+        $progression[$i] = $data['initial'] + ($data['step'] * $i);
     }
+    if ($data['invert'] == 1) {
+        return invert($progression);
+    }
+    return $progression;
 }

@@ -2,14 +2,15 @@
 
 namespace Braingames\Games;
 
+define("evenmessage", 'Answer "yes" if the number is even, otherwise answer "no"');
+define("evengame", 'Braingames\Games\getEvenData');
+
 function even()
 {
-    $message = 'Answer "yes" if the number is even, otherwise answer "no"';
-    $game = 'Braingames\Games\startEvenGame';
-    hello($message, $game);
+    hello(evenmessage, evengame);
 }
 
-function startEvenGame()
+function getEvenData()
 {
     $stats = getStatsForEven();
     return [
