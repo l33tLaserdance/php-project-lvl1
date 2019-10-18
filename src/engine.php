@@ -5,15 +5,15 @@ namespace Braingames\Games;
 use function cli\line as writeLine;
 use function cli\prompt as requestInput;
 
-function hello($message, $game)
+function startGame($message, $game)
 {
     writeLine(' %w%8Welcome to the Brain Games!%n');
     writeLine(" %w%8%s%n", $message);
     $name = requestInput(' %w%8May I have your name?%n');
     writeLine(' %g%8Hello, %s!%n', $name);
     $i = 0;
-    $turns = 3;
-    for ($i = 0; $i < $turns; $i++) {
+    $turnsCount = 3;
+    for ($i = 0; $i < $turnsCount; $i++) {
         $result = $game();
         writeLine(' %w%8Question: %s%n', $result['question']);
         $answer = requestInput(" ");

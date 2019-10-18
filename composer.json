@@ -1,6 +1,6 @@
 {
     "name": "smood/brain-games",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "bin": [
         "bin/brain-even",
         "bin/brain-calc",
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "files": [
-            "src/hello.php",
+            "src/engine.php",
             "src/games/even.php",
             "src/games/calc.php",
             "src/games/gcd.php",

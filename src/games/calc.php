@@ -3,43 +3,23 @@
 namespace Braingames\Games;
 
 define("CALCMESSAGE", 'What is the result of the expression?');
-define("CALCGAME", 'Braingames\Games\randomAction');
+define("CALCGAME", 'Braingames\Games\getCalcData');
 
 function calc()
 {
-    hello(CALCMESSAGE, CALCGAME);
+    startGame(CALCMESSAGE, CALCGAME);
 }
 
-function randomAction()
+function getCalcData()
 {
-    $data = getRandomNumbers();
-    switch (rand(0, 2)) {
-        case 0:
-            return [
-                'question' => $data['first'] . ' * ' . $data['second'],
-                'right' => $data['first'] * $data['second']
-            ];
-        case 1:
-            return [
-                'question' => $data['first'] . ' - ' . $data['second'],
-                'right' => $data['first'] - $data['second']
-            ];
-        case 2:
-            return [
-                'question' => $data['first'] . ' + ' . $data['second'],
-                'right' => $data['first'] + $data['second']
-            ];
-        default:
-            echo "An error has occured.";
-            return 0;
-            break;
-    }
-}
-
-function getRandomNumbers()
-{
-    $data = [];
-    $data['first'] = rand(1, 30);
-    $data['second'] = rand(1, 30);
-    return $data;
+    $firstNumber = rand(2, 30);
+    $secondNumber = rand(2, 30);
+    $allOperations = array($firstNumber + $secondNumber, $firstNumber - $secondNumber, $firstNumber * $secondNumber);
+    $operationsList = array('+', '-', '*');
+    $operationSelect = rand(0, 2);
+    $operation = $operationsList[$operationSelect];
+    return [
+        'question' => $firstNumber . ' ' . $operation . ' ' . $secondNumber,
+        'right' => $allOperations[$operationSelect]
+    ];
 }

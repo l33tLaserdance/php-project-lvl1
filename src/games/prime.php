@@ -7,7 +7,7 @@ define("PRIMEGAME", 'Braingames\Games\getPrimeData');
 
 function prime()
 {
-    hello(PRIMEMESSAGE, PRIMEGAME);
+    startGame(PRIMEMESSAGE, PRIMEGAME);
 }
 
 function getPrimeData()
@@ -22,13 +22,13 @@ function getPrimeData()
 function isPrime(int $number)
 {
     if ($number < 2) {
-        return 0;
+        return false;
     }
     $i = 2;
     for ($i = 2; $i <= $number / 2; $i++) {
         if ($number % $i == 0) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
