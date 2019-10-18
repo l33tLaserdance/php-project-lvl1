@@ -21,7 +21,8 @@ function getGcdData()
     ];
 }
 
-function findGcd($firstNumber, $secondNumber) {
+function findGcd($firstNumber, $secondNumber)
+{
     if ($secondNumber > 0) {
         return findGcd($secondNumber, $firstNumber % $secondNumber);
     } else {
