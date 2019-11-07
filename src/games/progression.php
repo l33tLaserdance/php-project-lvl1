@@ -2,15 +2,7 @@
 
 namespace Braingames\Games;
 
-define("PROGMESSAGE", 'What number is missing in the progressions given below?');
-define("PROGGAME", 'Braingames\Games\getProgressionData');
-
-function progression()
-{
-    startGame(PROGMESSAGE, PROGGAME);
-}
-
-function invert(array $progression)
+function invertProgression(array $progression)
 {
     $size = count($progression) - 1;
     for ($i = 0; $i < $size / 2; $i++) {
@@ -34,7 +26,7 @@ function getProgressionData()
     $question = implode(' ', $progression);
     return [
         'question' => $question,
-        'right' => $concealedElement
+        'answer' => $concealedElement
     ];
 }
 
@@ -43,5 +35,5 @@ function generateProgression($initial, $step, $length, $inversion)
     for ($i = 0; $i <= $length; $i++) {
         $progression[$i] = $initial + ($step * $i);
     }
-    return ($inversion == 1) ? invert($progression) : $progression;
+    return ($inversion == 1) ? invertProgression($progression) : $progression;
 }

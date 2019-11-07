@@ -2,31 +2,41 @@
 
 namespace Braingames\Games;
 
-use function cli\line as writeLine;
-use function cli\prompt as requestInput;
+define("TURNS_COUNT", 3);
 
-function startGame($message, $game)
+use function cli\line as line;
+use function cli\prompt as prompt;
+
+function startGame($message, $runGame)
 {
-    writeLine(' %w%8Welcome to the Brain Games!%n');
-    writeLine(" %w%8%s%n", $message);
-    $name = requestInput(' %w%8May I have your name?%n');
-    writeLine(' %g%8Hello, %s!%n', $name);
-    $i = 0;
-    $turnsCount = 3;
-    for ($i = 0; $i < $turnsCount; $i++) {
-        $result = $game();
-        writeLine(' %w%8Question: %s%n', $result['question']);
-        $answer = requestInput(" ");
-        writeLine(" %w%8Your answer: %s%n", $answer);
-        if ($result['right'] != $answer) {
-            writeLine(
-                " %w%8'%r%8{:a}%w%8' is wrong answer ;(. Correct answer was '%g%8{:b}%w%8'%n",
-                array('a' => $answer, 'b' => $result['right'])
+    line("%w%8Welcome to the Brain Games!%n");
+    line("%w%8%s%n", $message);
+    $name = prompt("%w%8May I have your name?%n");
+    line("%g%8Hello, %s!%n", $name);
+    $result = true;
+    for ($i = 0; $i < TURNS_COUNT; $i++) {
+        $quiz = $runGame();
+        line("%w%8Question: %s%n", $quiz['question']);
+        $answer = prompt(" ");
+        line("%w%8Your answer: %s%n", $answer);
+        if ($quiz['answer'] != $answer) {
+            line(
+                "%w%8'%r%8{:a}%w%8' is wrong answer ;(. Correct answer was '%g%8{:b}%w%8'%n",
+                array('a' => $answer, 'b' => $quiz['answer'])
             );
-            return writeLine(" %r%8Let's try again, %s!%n", $name);
-        } else {
-            writeLine(" %g%8Correct!%n");
+            $result = false;
+            break;
         }
+        line("%g%8Correct!%n");
     }
-    return writeLine(" %g%8Congratulations, %s!%n", $name);
+    writeResult($result, $name);
+}
+
+function writeResult($result, $name)
+{
+    if ($result == false) {
+        line("%r%8Let's try again, %s!%n", $name);
+    } else {
+        line("%g%8Congratulations, %s!%n", $name);
+    }
 }

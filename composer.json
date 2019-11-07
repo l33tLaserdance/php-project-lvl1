@@ -1,6 +1,6 @@
 {
     "name": "smood/brain-games",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "bin": [
         "bin/brain-even",
         "bin/brain-calc",
@@ -9,6 +9,13 @@
         "bin/brain-prime"
     ],
     "type": "project",
+    "keywords": [
+        "hexlet",
+        "project",
+        "lvl1",
+        "brain",
+        "games"
+    ],
     "authors": [
         {
             "name": "Smood",

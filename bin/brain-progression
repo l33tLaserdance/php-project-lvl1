@@ -1,13 +1,16 @@
 #!/usr/bin/env php
 
 <?php
-        $autoloadPath1 = __DIR__ . '/../../../autoload.php';
-        $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
-        if (file_exists($autoloadPath1)) {
-                require_once $autoloadPath1;
-        } else {
-                require_once $autoloadPath2;
-        }
+    $autoloadPath1 = __DIR__ . '/../../../autoload.php';
+    $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+    if (file_exists($autoloadPath1)) {
+        require_once $autoloadPath1;
+    } else {
+        require_once $autoloadPath2;
+    }
 
-        Braingames\Games\progression();
+    define("PROG_MESSAGE", 'What number is missing in the progressions given below?');
+    define("PROG_GAME", 'Braingames\Games\getProgressionData');
+    
+    Braingames\Games\startGame(PROG_MESSAGE, PROG_GAME);
 ?>

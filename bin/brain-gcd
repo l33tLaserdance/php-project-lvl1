@@ -1,13 +1,16 @@
 #!/usr/bin/env php
 
 <?php
-        $autoloadPath1 = __DIR__ . '/../../../autoload.php';
-        $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
-        if (file_exists($autoloadPath1)) {
-                require_once $autoloadPath1;
-        } else {
-                require_once $autoloadPath2;
-        }
+    $autoloadPath1 = __DIR__ . '/../../../autoload.php';
+    $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+    if (file_exists($autoloadPath1)) {
+        require_once $autoloadPath1;
+    } else {
+        require_once $autoloadPath2;
+    }
 
-        Braingames\Games\gcd();
+    define("GCD_MESSAGE", 'Find the greatest common divisor of given numbers.');
+    define("GCD_GAME", 'Braingames\Games\getGcdData');
+
+    Braingames\Games\startGame(GCD_MESSAGE, GCD_GAME);
 ?>
