@@ -2,16 +2,20 @@
 
 namespace Braingames\Games;
 
-function getCalcData()
+define("CALC_MESSAGE", 'What is the result of the expression?');
+
+function runCalc()
 {
-    $first = rand(2, 30);
-    $second = rand(2, 30);
-    $operationsList = array($first + $second, $first - $second, $first * $second);
-    $operandsList = array('+', '-', '*');
-    $operandIndex = rand(0, count($operationsList) - 1);
-    $questionOperand = $operandsList[$operandIndex];
-    return [
-        'question' => $first . ' ' . $questionOperand . ' ' . $second,
-        'answer' => $operationsList[$operandIndex]
-    ];
+    $getGameData = function () {
+        $first = rand(2, 30);
+        $second = rand(2, 30);
+        $operationsList = array('+', '-', '*');
+        $resultsList = array($first + $second, $first - $second, $first * $second);
+        $index = rand(0, count($operationsList) - 1);
+        return [
+            'question' => "$first $operationsList[$index] $second",
+            'answer' => $resultsList[$index]
+        ];
+    };
+    startGame(CALC_MESSAGE, $getGameData);
 }

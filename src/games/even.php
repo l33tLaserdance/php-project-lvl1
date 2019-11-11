@@ -10,8 +10,16 @@ function runEven()
         $question = rand(1, 30);
         return [
             'question' => $question,
-            'answer' => ($question % 2 == 0) ? 'yes' : 'no'
+            'answer' => isEven($question) ? 'yes' : 'no'
         ];
     };
     startGame(EVEN_MESSAGE, $getGameData);
+}
+
+function isEven($number)
+{
+    if ($number % 2 == 0) {
+        return true;
+    }
+    return false;
 }

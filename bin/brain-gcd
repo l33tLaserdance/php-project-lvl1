@@ -9,8 +9,5 @@
         require_once $autoloadPath2;
     }
 
-    define("GCD_MESSAGE", 'Find the greatest common divisor of given numbers.');
-    define("GCD_GAME", 'Braingames\Games\getGcdData');
-
-    Braingames\Games\startGame(GCD_MESSAGE, GCD_GAME);
+    Braingames\Games\runGcd();
 ?>

@@ -2,22 +2,27 @@
 
 namespace Braingames\Games;
 
-function getGcdData()
+define("GCD_MESSAGE", 'Find the greatest common divisor of given numbers.');
+
+function runGcd()
 {
-    $firstNumber = rand(1, 100);
-    $secondNumber = rand(1, 100);
-    $answer = findGcd($firstNumber, $secondNumber);
-    return [
-        'question' => $firstNumber . ' ' . $secondNumber,
-        'answer' => $answer
-    ];
+    $getGameData = function () {
+        $first = rand(1, 100);
+        $second = rand(1, 100);
+        $answer = findGcd($first, $second);
+        return [
+            'question' => $first . ' ' . $second,
+            'answer' => $answer
+        ];
+    };
+    startGame(GCD_MESSAGE, $getGameData);
 }
 
-function findGcd($firstNumber, $secondNumber)
+function findGcd($first, $second)
 {
-    if ($secondNumber > 0) {
-        return findGcd($secondNumber, $firstNumber % $secondNumber);
+    if ($second > 0) {
+        return findGcd($second, $first % $second);
     } else {
-        return abs($firstNumber);
+        return abs($first);
     }
 }

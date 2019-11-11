@@ -9,8 +9,5 @@
         require_once $autoloadPath2;
     }
 
-    define("PROG_MESSAGE", 'What number is missing in the progressions given below?');
-    define("PROG_GAME", 'Braingames\Games\getProgressionData');
-    
-    Braingames\Games\startGame(PROG_MESSAGE, PROG_GAME);
+    Braingames\Games\runProgression();
 ?>

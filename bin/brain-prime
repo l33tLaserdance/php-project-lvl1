@@ -9,9 +9,6 @@
         require_once $autoloadPath2;
     }
 
-    define("PRIME_MESSAGE", 'Answer "yes" if given number is prime. Otherwise answer "no"');
-    define("PRIME_GAME", 'Braingames\Games\getPrimeData');
-
-    Braingames\Games\startGame(PRIME_MESSAGE, PRIME_GAME);
+    Braingames\Games\runPrime();
 ?>
 

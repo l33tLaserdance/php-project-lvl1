@@ -24,19 +24,10 @@ function startGame($message, $runGame)
                 "%w%8'%r%8{:a}%w%8' is wrong answer ;(. Correct answer was '%g%8{:b}%w%8'%n",
                 array('a' => $answer, 'b' => $quiz['answer'])
             );
-            $result = false;
-            break;
+            line("%r%8Let's try again, %s!%n", $name);
+            return 0;
         }
         line("%g%8Correct!%n");
     }
-    writeResult($result, $name);
-}
-
-function writeResult($result, $name)
-{
-    if ($result == false) {
-        line("%r%8Let's try again, %s!%n", $name);
-    } else {
-        line("%g%8Congratulations, %s!%n", $name);
-    }
+    line("%g%8Congratulations, %s!%n", $name);
 }

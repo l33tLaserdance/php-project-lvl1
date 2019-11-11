@@ -9,8 +9,5 @@
         require_once $autoloadPath2;
     }
     
-    define("CALC_MESSAGE", 'What is the result of the expression?');
-    define("CALC_GAME", 'Braingames\Games\getCalcData');
-
-    Braingames\Games\startGame(CALC_MESSAGE, CALC_GAME);
+    Braingames\Games\runCalc();
 ?>
